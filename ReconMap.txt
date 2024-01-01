@@ -1,0 +1,96 @@
+some notes to take down.....
+
+finddomain, crt.sh, subbrute subfinder >>>list of subdomain...
+live subdomain ..... httpx, httprobe...
+gobuster, dirb for directory bruteforcing
+individual js files
+ DIY programming tools to grab information
+
+
+########################################## Subdomain discovery ###############################################
+    
+     example.com
+     
+     amass enum -d example.com
+     findomain -t example.com
+     crt.sh //cli version %.example.com
+     subbrute
+     dnsrecon
+     knockpy
+     subfinder
+     sublist3r
+     assetfinder
+     gau
+     photon -u "example.com" --dns
+     
+############################################## sort ###########################################################
+
+sort -u result.txt > uniqueResult.txt....
+     
+########################################### live host discovery ##############################################
+
+	httpx
+	httpprobe
+	build some tools with bash/python..
+	
+############################################### directory brutforcing ########################################
+
+ after getting a live cleaned subdomains....
+ 
+ dirb
+ gobuster
+ ffuf
+ 
+ tip creating your own wordlistS__
+                                  |
+                                  |___api wordlist...
+                                  |___directory wordlists..
+                                  |___etc wordlists...
+                                  |___sub directory...
+                                  |___internals wordlist...
+                                  
+                                  
+                                  
+                                  <<<<<SearchEngines>>>>>>
+                                  
+[Buckets, GoogleDorks, shodan, github, reconT, webint.io, cyberscan.io, pastebin.com, wolframalpha]
+
+  ok let me be truthful i dont and haven't used any of these but i'll learn......... and keep updating...
+  
+Buckets__________
+		 |____slurp
+		 |____bucket-flaws
+		 |____s3 scanner
+		 |____bucket dump
+		 
+Shodan Dorks && Tips______
+			  1. go company website
+			  2. look into source code and copy link to favicon file..
+			  3. use python script to get hashes of favicon file(get-shodan-favicon-hash)
+			  4. script returns a hash
+			  5. go to shodan and query ==> http.favicon.hash:-the hash;
+			  6. damn you need membership :(
+			  
+github Dork && Tips..coming soon.._____
+	  
+##################################### Increasing attack surface #####################################
+	nmap____
+		nmap -sS -sU -sV -p- example.com
+		get open ports.....
+		
+	nikto -h example.com
+	
+	zap proxy && burpsuite__________                                  ________________
+					|___extensions for scanning....___|
+	zap extensions <<.
+	burp extensions <<<.				
+			
+	
+					
+		
+	
+		
+	
+	  
+
+ 
