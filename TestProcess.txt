@@ -1,0 +1,38 @@
+this is the testing process iam putting as everything cannot go into the human head..............
+
+############################## Auth ########################################
+
+-- using an abitary email to accept invitation...change the value of the email. [the accept endpoint or something changing the email]
+-- check if there is temp password in reset password field.
+-- changing email in oauth flow
+-- bypassing 2fa by sending blank codes intercept request with incorrect code don't forwared remove code and forwared
+-- always test for ratelimit if otp is involved
+-- replacing the id in /recover with /reset-password
+-- ATO via 2fa create a normal ussr without 2fa enabled create ussr2 with 2fa use id of normal ussr in 2fa request
+-- bypassing captcha check with x-forwarded-for
+-- try using users username to reset password i.e replace username with victim username 
+-- redirect uri in oauth try adding abitary domain to the end ie example.daz.abitary.com try using openredirect
+-- reset password so a token can be sent to the email change the email and see if token is still valid....
+-- check reset password link protocol
+-- ATO via registering new account for existing user by adding \u0023 and entering a new password 
+-- direct page request.... for example the flow is login=>admin but going straight to /admin
+-- parameter modification logged_in = True
+-- response manipulation right click and select do intercept >> response to this request
+-- check response tab if reset token is leaked there{dev tools}... 
+-- it token is being reflected in the response test for cors misconfiguration to see if ATO is possible...
+-- simple path navigation i.e api/users fuzz is recommended
+-- csrf methods:
+                remove csrf token
+                change to random value
+                change to unauthenticated user token
+                change to another authenticated user token
+                change http methods
+                remove referer value
+                remove referer header
+                mixture of some of em
+
+-- check session, local, cookie if role3s exists i.e admin
+-- try sending two emails at the same time to the reset password if it will generate the same password
+--  changing product id to zero <bussiness logic>
+-- mass assignment adding parameter like email requires guessing
+-- 
