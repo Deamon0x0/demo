@@ -41,7 +41,13 @@ this is the testing process iam putting as everything cannot go into the human h
 -- Using the same session start the flow using your account and the victim's account. When reaching the 2FA point on both accounts, complete the 2FA with your account but do not access the next part. Instead of that, try to access the next step with the victim's account flow. If the back-end only set a boolean inside your sessions saying that you have successfully passed the 2FA you will be able to bypass the 2FA of the victim.
 -- tip any functionality that logs user in automatically like reset password etc, try abusing it..... I.e if the reset me functionality is tied to ip, try x-forwarded-for: on victim ip. 
 -- using previous sessions after activating 2fa
-
+-- Create an Account and Turn On 2FA.
+Logout from that account.
+Now, Go to forget Password-Reset page.
+Change your password.
+Now try to log in.
+If you are not asked to enter a 2FA code, You can report.
+--
 # The New Beginning
 
 // 
