@@ -47,7 +47,13 @@ Now, Go to forget Password-Reset page.
 Change your password.
 Now try to log in.
 If you are not asked to enter a 2FA code, You can report.
---
+-- website that requires roles and adding users to group... see if you can replace your username and email with victim if it adds them automatically... 
+-- parameter guessing adding password to JSON body in request and all sorts I.e email to bypass 2fa
+
+
+
+
+
 # The New Beginning
 
 // 
