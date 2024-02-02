@@ -54,6 +54,10 @@ If you are not asked to enter a 2FA code, You can report.
 
 
 
-# The New Beginning
+###### command injection
 
-// 
+// oh yeah the command injection...... 
+a lot of programming spaces to cover let begin 
+
+// get a parameter like name break out of the string with " or ' try various payload
+;";commands
