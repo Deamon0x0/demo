@@ -3,24 +3,43 @@ this is the testing process iam putting as everything cannot go into the human h
 ############################## Auth ########################################
 
 -- using an abitary email to accept invitation...change the value of the email. [the accept endpoint or something changing the email]
+
 -- check if there is temp password in reset password field.
+
 -- changing email in oauth flow
+
 -- bypassing 2fa by sending blank codes intercept request with incorrect code don't forwared remove code and forwared
+
 -- always test for ratelimit if otp is involved
+
 -- replacing the id in /recover with /reset-password
+
 -- ATO via 2fa create a normal ussr without 2fa enabled create ussr2 with 2fa use id of normal ussr in 2fa request
+
 -- bypassing captcha check with x-forwarded-for
+
 -- try using users username to reset password i.e replace username with victim username 
+
 -- redirect uri in oauth try adding abitary domain to the end ie example.daz.abitary.com try using openredirect
+
 -- reset password so a token can be sent to the email change the email and see if token is still valid....
+
 -- check reset password link protocol
+
 -- ATO via registering new account for existing user by adding \u0023 and entering a new password 
+
 -- direct page request.... for example the flow is login=>admin but going straight to /admin
+
 -- parameter modification logged_in = True
+
 -- response manipulation right click and select do intercept >> response to this request
+
 -- check response tab if reset token is leaked there{dev tools}... 
+
 -- it token is being reflected in the response test for cors misconfiguration to see if ATO is possible...
+
 -- simple path navigation i.e api/users fuzz is recommended
+
 -- csrf methods:
                 remove csrf token
                 change to random value
@@ -32,22 +51,34 @@ this is the testing process iam putting as everything cannot go into the human h
                 mixture of some of em
 
 -- check session, local, cookie if role3s exists i.e admin
+
 -- try sending two emails at the same time to the reset password if it will generate the same password
+
 --  changing product id to zero <bussiness logic>
+
 -- mass assignment adding parameter like email requires guessing
+
 -- bypassing 2fa by going to the endpoint directly, if it doesn't work change ref feral as if you came from 2fa page
+
 -- if you get token from 2fa try using if it will work, also try on different account if it will bypass 2fa
+
 -- try reusing email verification link to see if you can access account without 2fa
+
 -- Using the same session start the flow using your account and the victim's account. When reaching the 2FA point on both accounts, complete the 2FA with your account but do not access the next part. Instead of that, try to access the next step with the victim's account flow. If the back-end only set a boolean inside your sessions saying that you have successfully passed the 2FA you will be able to bypass the 2FA of the victim.
+
 -- tip any functionality that logs user in automatically like reset password etc, try abusing it..... I.e if the reset me functionality is tied to ip, try x-forwarded-for: on victim ip. 
+
 -- using previous sessions after activating 2fa
+
 -- Create an Account and Turn On 2FA.
 Logout from that account.
 Now, Go to forget Password-Reset page.
 Change your password.
 Now try to log in.
 If you are not asked to enter a 2FA code, You can report.
+
 -- website that requires roles and adding users to group... see if you can replace your username and email with victim if it adds them automatically... 
+
 -- parameter guessing adding password to JSON body in request and all sorts I.e email to bypass 2fa
 
 
@@ -61,3 +92,5 @@ a lot of programming spaces to cover let begin
 
 // get a parameter like name break out of the string with " or ' try various payload
 ;";commands
+
+// command injection is not found in regular web app it is usually found in services that serve webapps 
