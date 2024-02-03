@@ -94,3 +94,18 @@ a lot of programming spaces to cover let begin
 ;";commands
 
 // command injection is not found in regular web app it is usually found in services that serve webapps 
+
+
+###### Cookie Based Attack
+
+// basic checks like is the cookie the same after login. 
+
+// log out and try to use the same cookie. 
+
+// check of cookie has any information and try to modify it
+
+// Try to create several accounts with almost the same username and check if you can see similarities.
+
+// check if previous cookie works after changing password. 
+
+// 
