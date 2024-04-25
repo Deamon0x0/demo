@@ -84,7 +84,9 @@ If you are not asked to enter a 2FA code, You can report.
 -- if the webapp has an upload image functionality/ link to for image insertion, be sure that the malicious link hass the root domain,
    or a invitation code that when viewed it automatically add the victim as friend
 
+-- try fuzzing for endpoints for bypassing authentication
 
+-- 
 
 ###### command injection
 
