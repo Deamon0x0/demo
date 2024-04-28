@@ -190,5 +190,10 @@ it can be exploited with the following
 .. javascript://%0aalert(1) for links
 
 
+after fuzzing and Discovery, if you stumble across an empty page, try inserting data into the body of the requests i.e a=1 even json { "a":"2"}
+
+
+
+
 ############### Directory Traversal #################33333
 .. if you cant traverse any further try inserting a character i.e /../../a../../
