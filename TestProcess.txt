@@ -165,8 +165,8 @@ it can be exploited with the following
                                                               </script>
 
 .. xss via file upload, if the functionality does not allow uploading of other files excetpt that from .images extensions
-   try uploading without file just extension, i.e .mp3 and change the content to html with script tag, 
-   upload a mask.jpg so you can navigate to the .mp3 path
+   try uploading without file just extension, i.e .mp3 and change the content to html with script tag i.e <script>alert()</script>, 
+   upload a mask.jpg so you can navigate first navigate to the mask.jpg path then changing the path to .mp3
 
 .. test every parameters in a webapp for xss i.e param=1&param=1&param=3
 
