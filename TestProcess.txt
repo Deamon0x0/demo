@@ -190,9 +190,9 @@ it can be exploited with the following
 .. javascript://%0aalert(1) for links
 
 
-after fuzzing and Discovery, if you stumble across an empty page, try inserting data into the body of the requests i.e a=1 even json { "a":"2"}
+.. after fuzzing and Discovery, if you stumble across an empty page, try inserting data into the body of the requests i.e a=1 even json { "a":"2"}
 
-
+.. if you see an oath flow try to mess up the redirect uri parameter to cause an error, if there is a change in the URL i.e an error appears inject JavaScript code into it parameter i.e https://site.com/?redirect=something&error=<script>alert()</script>
 
 
 ############### Directory Traversal #################33333
