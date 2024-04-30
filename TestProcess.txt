@@ -195,5 +195,10 @@ it can be exploited with the following
 .. if you see an oath flow try to mess up the redirect uri parameter to cause an error, if there is a change in the URL i.e an error appears inject JavaScript code into it parameter i.e https://site.com/?redirect=something&error=<script>alert()</script>
 
 
+.. if you successfully break out of a double quote and the bracket "()"
+is not allowed you can use decimal Unicode characters &#40 == ).
+
+.. some URL have parameters try URL encoding your payload 
+
 ############### Directory Traversal #################33333
 .. if you cant traverse any further try inserting a character i.e /../../a../../
