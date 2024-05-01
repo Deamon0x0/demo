@@ -200,5 +200,10 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 
 .. some URL have parameters try URL encoding your payload 
 
+.. try to put or inject xss in the input field of a request json body
+
+
+
+
 ############### Directory Traversal #################33333
 .. if you cant traverse any further try inserting a character i.e /../../a../../
