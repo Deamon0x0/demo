@@ -204,6 +204,9 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 
 .. fuzzing parameters to i.e https... something?FUZZ=something to see valid ones and inject xss payloads
 
+.. try injecting payloads in the languages parameters or body of request 
+
+
 
 
 ############### Directory Traversal #################33333
