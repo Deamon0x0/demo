@@ -202,6 +202,7 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 
 .. try to put or inject xss in the input field of a request json body
 
+.. fuzzing parameters to i.e https... something?FUZZ=something to see valid ones and inject xss payloads
 
 
 
