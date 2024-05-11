@@ -211,3 +211,9 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 
 ############### Directory Traversal #################33333
 .. if you cant traverse any further try inserting a character i.e /../../a../../
+
+
+
+################## Cors Misconfig ################
+\\ try appending %60 to the origin followed by the evilurl .. i.e Origin: site.com%60Example.com
+\\ if an endpoint containing sensitive info has a wildcard and dosent have a 
