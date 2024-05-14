@@ -224,3 +224,7 @@ $$$$$$$$$$$$$$$$$$$$$$$
 
 ** xss in oauth parameter leads to code disclosure, i.e the /callback?code=1234
 try to provoke an error in the oauth flow, and try injecting xss payloads, using it to steal callback code 
+
+** try changing the response_type parameter to code_id_token{value found in docs}
+
+"NOTE": it is important to find every assets including docs of the company and learning how things function, the mdn web docs
