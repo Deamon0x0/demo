@@ -228,3 +228,5 @@ try to provoke an error in the oauth flow, and try injecting xss payloads, using
 ** try changing the response_type parameter to code_id_token{value found in docs}
 
 "NOTE": it is important to find every assets including docs of the company and learning how things function, the mdn web docs
+
+some applications allow redirect only if a valid code is passed 
