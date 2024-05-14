@@ -229,4 +229,7 @@ try to provoke an error in the oauth flow, and try injecting xss payloads, using
 
 "NOTE": it is important to find every assets including docs of the company and learning how things function, the mdn web docs
 
-some applications allow redirect only if a valid code is passed 
+some applications allow redirect only if a valid code is passed.
+
+** lack of verification on access code
+for example if a webapp uses Facebook oauth to login, and another site without verification does the code of site A, user A can be used to create account takeover in site B, for user A, because site be doesn't verify token 
