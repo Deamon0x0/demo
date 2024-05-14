@@ -217,3 +217,7 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 ################## Cors Misconfig ################
 \\ try appending %60 to the origin followed by the evilurl .. i.e Origin: site.com%60Example.com
 \\ if an endpoint containing sensitive info has a wildcard and dosent have a 
+
+
+$$$$$$$$$$$$$$$$$$$$ Oauth Misconfig 
+$$$$$$$$$$$$$$$$$$$$$$$
