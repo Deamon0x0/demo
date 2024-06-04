@@ -17,9 +17,11 @@ individual js files
      subbrute
      dnsrecon
      knockpy guel..
+     Censys
      subfinder
      sublist3r
      assetfinder
+     Auqatone
      gau
      photon -u "example.com" --dns
      
