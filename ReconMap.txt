@@ -16,16 +16,19 @@ individual js files
      crt.sh //cli version %.example.com
      subbrute
      dnsrecon
-     knockpy
+     knockpy guel..
      subfinder
      sublist3r
      assetfinder
      gau
      photon -u "example.com" --dns
      
+     
 ############################################## sort ###########################################################
 
 sort -u result.txt > uniqueResult.txt....
+anew tool
+gwak || sed ...
      
 ########################################### live host discovery ##############################################
 
