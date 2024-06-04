@@ -20,6 +20,7 @@ individual js files
      Censys
      subfinder
      sublist3r
+     massdns
      assetfinder
      Auqatone
      gau
