@@ -18,6 +18,7 @@ individual js files
      dnsrecon
      knockpy guel..
      Censys
+     kite
      subfinder
      sublist3r
      massdns
