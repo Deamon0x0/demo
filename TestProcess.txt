@@ -1,6 +1,6 @@
 this is my main testing method.............
 
-############################## Auth ########################################
+################################################################################################# Auth #####################################################################################
 
 -- using an abitary email to accept invitation...change the value of the email. [the accept endpoint or something changing the email]
 
@@ -88,7 +88,7 @@ If you are not asked to enter a 2FA code, You can report.
 
 -- 
 
-###### command injection
+############################################################################### Command Injection #######################################################################################
 
 // oh yeah the command injection...... 
 a lot of programming spaces to cover let begin 
@@ -99,7 +99,7 @@ a lot of programming spaces to cover let begin
 // command injection is not found in regular web app it is usually found in services that serve webapps 
 
 
-###### Cookie Based Attack
+######################################################################################## Cookie Based Attack ##################################################################
 
 // basic checks like is the cookie the same after login. 
 
@@ -112,7 +112,7 @@ a lot of programming spaces to cover let begin
 // check if previous cookie works after changing password. 
 
 // 
-################## XSS #######################3
+############################################################################################## XSS #############################################################################3
 .. the svg image upload style
 the following svg payload....           
 
@@ -128,10 +128,10 @@ the following svg payload....
 
 
 
-.. if the page contains a parameter i.e param=  , try breaking the application, insert an emoji,
+.. if the page contains a parameter i.e param=  , try breaking the application i.e insert an emoji,
 if the application breaks insert a script tag afterwards i.e param='emoji'<script>alert()</script>
 
-.. changing the x-forwarded-host to burp/zap oastify server it can confuse a load balancer to forward cookie
+.. changing the x-forwarded-host to burp/zap collaboration/oastify server it can confuse a load balancer to forward cookie
 to the attacker controlled domain, if an xxs javascript could be used to steal cookies
 
       function httpGet(Url)
@@ -143,29 +143,6 @@ to the attacker controlled domain, if an xxs javascript could be used to steal c
        return xmlHttp.responseText; 
       }
       httpGet(“https://vulnerableapp.host/"); // Run payload
-
-.. copy and paste xss, the following snippet is vulnerable to xss
-                                                                    <input placeholder="Paste here" id="pasted"/>
-                                                                    <script>
-                                                                    document.addEventListener('paste', event => {
-                                                                        const data = event.clipboardData.getData('text/html');
-                                                                        pasted.innerHTML = data;
-                                                                    });
-                                                                    </script>
-
-it can be exploited with the following 
-
-                                                              <button onclick="copy()">Click</button>
-                                                              <script>
-                                                                  document.addEventListener('copy', event => {
-                                                                      event.preventDefault();
-                                                                      event.clipboardData.setData('text/html', '<img src onerror=alert(1)>');
-                                                                      alert('Please paste the copied contents into the vulnerable page');
-                                                                  });
-                                                                  function copy() {
-                                                                      document.execCommand('copy');
-                                                                  }
-                                                              </script>
 
 
 
@@ -219,13 +196,12 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 
 
 
-################## Cors Misconfig ################
+############################################################################# Cors Misconfig #########################################################################################
 \\ try appending %60 to the origin followed by the evilurl .. i.e Origin: site.com%60Example.com
 \\ if an endpoint containing sensitive info has a wildcard and dosent have a 
 
 
-$$$$$$$$$$$$$$$$$$$$ Oauth Misconfig 
-$$$$$$$$$$$$$$$$$$$$$$$
+###################################################################################### Oauth Misconfig #######################################################################################
 
 ** xss in oauth parameter leads to code disclosure, i.e the /callback?code=1234
 try to provoke an error in the oauth flow, and try injecting xss payloads, using it to steal callback code 
