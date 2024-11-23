@@ -71,11 +71,11 @@ this is my main testing method.............
 -- using previous sessions after activating 2fa
 
 -- Create an Account and Turn On 2FA.
-Logout from that account.
-Now, Go to forget Password-Reset page.
-Change your password.
-Now try to log in.
-If you are not asked to enter a 2FA code, You can report.
+                                      Logout from that account.
+                                      Now, Go to forget Password-Reset page.
+                                      Change your password.
+                                      Now try to log in.
+                                     // If you are not asked to enter a 2FA code, You can report.//
 
 -- website that requires roles and adding users to group... see if you can replace your username and email with victim if it adds them automatically... 
 
@@ -113,6 +113,8 @@ a lot of programming spaces to cover let begin
 
 // 
 ############################################################################################## XSS #############################################################################3
+
+
 .. the svg image upload style
 the following svg payload....           
 
@@ -131,8 +133,8 @@ the following svg payload....
 .. if the page contains a parameter i.e param=  , try breaking the application i.e insert an emoji,
 if the application breaks insert a script tag afterwards i.e param='emoji'<script>alert()</script>
 
-.. changing the x-forwarded-host to burp/zap collaboration/oastify server it can confuse a load balancer to forward cookie
-to the attacker controlled domain, if an xxs javascript could be used to steal cookies
+.. changing the x-forwarded-host to burp/zap collaboration/oastify server it might confuse a load balancer to forward cookie
+to the attacker controlled domain, if there's xxs javascript could be used to steal cookies
 
       function httpGet(Url)
       {
@@ -148,7 +150,9 @@ to the attacker controlled domain, if an xxs javascript could be used to steal c
 
 .. xss via file upload, if the functionality does not allow uploading of other files excetpt that from .images I.e .jpg .png etc extensions
    try uploading without file just extension, i.e .mp3 and change the content of the request to html with script tag i.e <script>alert()</script>, 
-   upload a mask.jpg so you can navigate first navigate to the mask.jpg path then changing the path to .mp3
+   upload a mask.jpg so you can navigate first navigate to the mask.jpg path then changing the path to .mp3 i.e 
+      GET /mask.jpg -------> GET /.mp3
+  because .mp3 might not be accessible through client navigation 
 
 .. test every parameters in a webapp for xss i.e param=1&param=1&param=3
 
@@ -159,7 +163,7 @@ to the attacker controlled domain, if an xxs javascript could be used to steal c
 .. if  encountred withform data disposition you can add Content-Disposition: form-data; name="some name"
 1<ScRiPt>alert(9639)</ScRiPt>
 
-.. any link found could be i.e redirect_to=javascript:alert("XSS"), returnTo=javascript:alert(document.cookie)
+.. any link found could be vulnerable i.e redirect_to=javascript:alert("XSS"), returnTo=javascript:alert(document.cookie)
 
 .. try adding '-confirm('XSSALERT')-' to url parameter note it has to be url encoded
 
@@ -167,27 +171,32 @@ to the attacker controlled domain, if an xxs javascript could be used to steal c
   "ipAddress": "<svg on onload=(alert)(document.domain)>",
   "callBackURL": "dssdsd"
 }
+        try every JSON keys i.e the callBackURL also and dont forget to turn the mime/Content-Type = application/json
 
-.. you can intercept and modify a submission on a form if the form contains a json, \"javascript:alert()
+
+.. you can intercept and modify a submission on a form if the form contains a json, \"javascript:alert() same as previous
+
+
 .. javascript://%0aalert(1) for links
 
 
-.. after fuzzing and Discovery, if you stumble across an empty page, try inserting data into the body of the requests i.e a=1 even json { "a":"2"}
+.. after fuzzing and Discovery, if you stumble across an empty page, try inserting data into the body of the requests i.e a=1 even json { "a":"2"} don't forget to play with the Headers
 
-.. if you see an oath flow try to mess up the redirect uri parameter to cause an error, if there is a change in the URL i.e an error appears inject JavaScript code into it parameter i.e https://site.com/?redirect=something&error=<script>alert()</script>
+.. if you see an oath flow try to mess up the redirect uri parameter to cause an error, if there is a change in the URL i.e an error appears inject JavaScript code into it parameter i.e               
+    https://site.com/?redirect=something&error=<script>alert()</script>
 
 
 .. if you successfully break out of a double quote and the bracket "()"
-is not allowed you can use decimal Unicode characters &#40 == ).
+   is not allowed you can use decimal Unicode characters &#40 == ).
 
-.. some URL have parameters try URL encoding your payload 
-
-.. try to put or inject xss in the input field of a request json body
 
 .. fuzzing parameters to i.e https... something?FUZZ=something to see valid ones and inject xss payloads
 
 .. try injecting payloads in the languages parameters or body of request 
 
+.. CSP Bypass check the allowlist domains if it possible to execute xss...... try using the <a href=vulnerable-allow-list>totally safe</a>
+  also check if script-dynamic is being used
+  
 
 
 
@@ -197,6 +206,7 @@ is not allowed you can use decimal Unicode characters &#40 == ).
 
 
 ############################################################################# Cors Misconfig #########################################################################################
+
 \\ try appending %60 to the origin followed by the evilurl .. i.e Origin: site.com%60Example.com
 \\ if an endpoint containing sensitive info has a wildcard and dosent have a 
 
